@@ -1,0 +1,510 @@
+/* styles.css */
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps du document */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+    padding-left: 250px; /* Espace pour la barre latérale */
+    transition: background-color 0.5s, color 0.5s, padding-left 0.5s;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Thème Sombre */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Bouton de Thème Toggle */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+body.dark-theme #theme-toggle {
+    color: #bb86fc;
+}
+
+/* Retour en Haut */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #1abc9c;
+    transform: scale(1.1);
+}
+
+body.dark-theme #back-to-top {
+    background-color: #03dac6;
+}
+
+body.dark-theme #back-to-top:hover {
+    background-color: #bb86fc;
+}
+
+/* Barre Latérale (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+    transition: background-color 0.5s;
+    z-index: 999;
+}
+
+body.dark-theme .sidebar {
+    background-color: #1e1e1e;
+}
+
+.table-of-contents {
+    /* Aucun changement nécessaire ici */
+}
+
+.table-of-contents h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #2c3e50;
+    font-size: 1.8em;
+    transition: color 0.5s;
+}
+
+body.dark-theme .table-of-contents h2 {
+    color: #bb86fc;
+}
+
+.table-of-contents ol {
+    list-style: decimal inside;
+    padding-left: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.5em;
+}
+
+.table-of-contents a {
+    text-decoration: none;
+    color: #2980b9;
+    transition: color 0.3s;
+}
+
+body.dark-theme .table-of-contents a {
+    color: #03dac6;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+    color: #1abc9c;
+}
+
+body.dark-theme .table-of-contents a:hover {
+    color: #bb86fc;
+}
+
+/* Page de Garde */
+.cover-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+	width: 100%
+    background-color: #fff;
+    transition: background-color 0.5s, color 0.5s;
+	overflow: hidden; /* Assure que tout débordement est masqué */
+}
+
+body.dark-theme .cover-page {
+    background-color: #1e1e1e;
+}
+
+.cover-page h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    text-align: center;
+    transition: color 0.5s;
+}
+
+body.dark-theme .cover-page h1 {
+    color: #bb86fc;
+}
+
+.cover-page h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #34495e;
+    text-align: center;
+    transition: color 0.5s;
+}
+
+body.dark-theme .cover-page h2 {
+    color: #03dac6;
+}
+
+.cover-image {
+     width: 100%; /* L'image occupe toute la largeur du conteneur */
+    height: 100%; /* L'image occupe toute la hauteur du conteneur */
+    object-fit: cover; /* Assure que l'image remplit le conteneur sans déformation */
+    border-radius: 0; /* Supprime les coins arrondis */
+    box-shadow: none; /* Supprime l'ombre */
+}
+
+/* Dédicace */
+.dedicace {
+    text-align: center;
+    margin: 2em 0;
+    font-style: italic;
+    color: #555;
+    padding: 0 10%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+body.dark-theme .dedicace {
+    color: #bbb;
+}
+
+/* Barre de Recherche */
+.search-section {
+    text-align: center;
+    margin: 2em 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.search-section input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #2980b9;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    font-size: 1em;
+}
+
+.search-section input:focus {
+    border-color: #1abc9c;
+    outline: none;
+}
+
+body.dark-theme .search-section input {
+    border-color: #03dac6;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.search-section input::placeholder {
+    color: #aaa;
+}
+
+body.dark-theme .search-section input::placeholder {
+    color: #666;
+}
+
+/* Introduction et Épilogue */
+.introduction, .epilogue, .auteur {
+    margin: 2em 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.introduction h2, .epilogue h2, .auteur h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #2c3e50;
+    font-size: 2em;
+    transition: color 0.5s;
+}
+
+body.dark-theme .introduction h2,
+body.dark-theme .epilogue h2,
+body.dark-theme .auteur h2 {
+    color: #bb86fc;
+}
+
+.introduction p, .epilogue p, .auteur p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    line-height: 1.8;
+    color: #333;
+    padding: 0 10%;
+    transition: color 0.5s;
+}
+
+body.dark-theme .introduction p,
+body.dark-theme .epilogue p,
+body.dark-theme .auteur p {
+    color: #e0e0e0;
+}
+
+/* Poèmes */
+.poeme {
+    margin: 3em 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    position: relative;
+}
+
+.poeme h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #8e44ad;
+    font-size: 1.8em;
+    transition: color 0.5s;
+}
+
+body.dark-theme .poeme h2 {
+    color: #bb86fc;
+}
+
+.poeme p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-style: italic;
+    line-height: 1.8;
+    color: #555;
+    transition: color 0.5s;
+}
+
+body.dark-theme .poeme p {
+    color: #ccc;
+}
+
+.poeme img.illustration {
+    display: block;
+    margin: 1em auto;
+    max-width: 40%;
+    height: auto;
+}
+
+.mark-read {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.mark-read:hover {
+    background-color: #1abc9c;
+}
+
+body.dark-theme .mark-read {
+    background-color: #03dac6;
+}
+
+body.dark-theme .mark-read:hover {
+    background-color: #bb86fc;
+}
+
+.poeme.read {
+    opacity: 0.6;
+}
+
+/* Séparateurs Visuels */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2em 0;
+}
+
+body.dark-theme .divider {
+    background: #555;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.poeme:target {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #2980b9;
+    padding-left: 1em;
+    transition: background-color 0.3s, border-left 0.3s;
+}
+
+body.dark-theme .poeme:target {
+    background-color: rgba(18, 18, 18, 0.1);
+    border-left: 5px solid #03dac6;
+}
+
+/* Épilogue et Informations sur l'Auteur */
+.epilogue, .auteur {
+    background-color: #f9f9f9;
+    padding: 2em 0;
+    transition: background-color 0.5s;
+}
+
+body.dark-theme .epilogue, 
+body.dark-theme .auteur {
+    background-color: #1e1e1e;
+}
+
+.auteur a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+body.dark-theme .auteur a {
+    color: #03dac6;
+}
+
+.auteur a:hover {
+    text-decoration: underline;
+    color: #1abc9c;
+}
+
+body.dark-theme .auteur a:hover {
+    color: #bb86fc;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    body {
+        padding-left: 200px;
+    }
+    
+    .sidebar {
+        width: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        padding-left: 150px;
+    }
+    
+    .sidebar {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajuster le padding-left pour les petits écrans */
+    body {
+        padding-left: 0;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -220px; /* Masquer la sidebar par défaut */
+        width: 220px;
+        height: 100%;
+        background-color: #f4f4f4;
+        transition: left 0.3s;
+    }
+    
+    body.dark-theme .sidebar {
+        background-color: #1e1e1e;
+    }
+    
+    /* Afficher la sidebar lorsqu'elle est active */
+    body.sidebar-open .sidebar {
+        left: 0;
+    }
+    
+    /* Afficher le bouton de menu pour les petits écrans */
+    #menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #2980b9;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    body.dark-theme #menu-toggle {
+        background-color: #03dac6;
+    }
+    
+    /* Masquer la sidebar et ajuster le contenu */
+    .cover-page,
+    .dedicace,
+    .search-section,
+    .introduction,
+    .poeme,
+    .epilogue,
+    .auteur {
+        padding: 0 20px;
+    }
+}
+
+/* Ajouter le bouton de menu dans le HTML pour les petits écrans */
+
